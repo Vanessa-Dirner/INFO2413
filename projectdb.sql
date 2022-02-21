@@ -50,13 +50,13 @@ CREATE TABLE vendor (
 
 
   insert into vendor (batch, expirationdate, vendorname, seedtype, seedname, quantityavailable)
-  values ('B0001', '2020-01-10'  ,'00125'  , 'Pear', 'Bosc', 'Winter' ),
-         ('B0002', '2019-07-22'  ,'00608'  , 'Rhubarb', 'KangaRhu', 'Spring'),
-         ('B0003', '2021-01-10'  ,'00005'  , 'Celery', 'Conquistador', 'Winter'),
-         ('B0004', '2022-01-01'  ,'00473'  , 'Lemon', 'Eureka', 'Spring'),
-         ('B0005', '2018-09-09'  ,'00201'  , 'Lemon', 'Baboon', 'Spring');
+  values ('B0021', '2020-01-10'. 'West Coast Seeds'  ,'00125'  , 'Pear', 'Bosc', 'Winter' ),
+         ( '2019-07-22', 'Canada Seed Company' ,'00608'  , 'Rhubarb', 'KangaRhu', 'Spring'),
+         (, '2021-01-10', 'Farm Direct Seeds' ,'00005'  , 'Celery', 'Conquistador', 'Winter'),
+         (, '2022-01-01' ,'Tropico' ,'00473'  , 'Lemon', 'Eureka', 'Spring'),
+         (, '2018-09-09', ''  ,'00201'  , 'Lemon', 'Baboon', 'Spring');
 
-         
+
 
 CREATE TABLE staff (
     userid CHAR(6) NOT NULL,
@@ -71,6 +71,13 @@ CREATE TABLE staff (
     passkey CHAR(4) NOT NULL,
     PRIMARY KEY (userid)
 );
+
+  insert into staff (userid, fName, lName, jobrole, email, isactive, startsate, enddate, username, passkey)
+  values ('B0001', '2020-01-10'  ,'00125'  , 'Pear', 'Bosc', 'Winter' ),
+         ('B0002', '2019-07-22'  ,'00608'  , 'Rhubarb', 'KangaRhu', 'Spring'),
+         ('B0003', '2021-01-10'  ,'00005'  , 'Celery', 'Conquistador', 'Winter'),
+         ('B0004', '2022-01-01'  ,'00473'  , 'Lemon', 'Eureka', 'Spring'),
+         ('B0005', '2018-09-09'  ,'00201'  , 'Lemon', 'Baboon', 'Spring');
 
 
 -- -----Some useful commands about tables------
