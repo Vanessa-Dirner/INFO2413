@@ -51,10 +51,10 @@ CREATE TABLE vendor (
 
   insert into vendor (batch, expirationdate, vendorname, seedtype, seedname, quantityavailable)
   values ('B0021', '2020-01-10'. 'West Coast Seeds' , 'Pear', 'Bosc', 'Winter' ),
-         ('B0054' '2019-07-22', 'Canada Seed Company' , 'Rhubarb', 'KangaRhu', 'Spring'),
+         ('B0054' '2019-07-22', 'Canada Seed Company' , 'Sunflower', 'Titan', 'Spring'),
          ('B0572', '2021-01-10', 'Farm Direct Seeds' , 'Celery', 'Conquistador', 'Winter'),
          ('B0300', '2022-01-01' ,'Tropico' , 'Lemon', 'Eureka', 'Spring'),
-         ('B0401', '2018-09-09', 'Tropico'  , 'Lemon', 'Baboon', 'Spring');
+         ('B0401', '2018-09-09', 'Tropico'  , 'Grape', 'Moon Drops', 'Spring');
 
 
 
@@ -73,18 +73,18 @@ CREATE TABLE staff (
 );
 
   insert into staff (userid, fName, lName, jobrole, email, isactive, startsate, enddate, username, passkey)
-  values ('B0001', '2020-01-10'  ,'00125'  , 'Pear', 'Bosc', 'Winter' ),
-         ('B0002', '2019-07-22'  ,'00608'  , 'Rhubarb', 'KangaRhu', 'Spring'),
-         ('B0003', '2021-01-10'  ,'00005'  , 'Celery', 'Conquistador', 'Winter'),
-         ('B0004', '2022-01-01'  ,'00473'  , 'Lemon', 'Eureka', 'Spring'),
-         ('B0005', '2018-09-09'  ,'00201'  , 'Lemon', 'Baboon', 'Spring');
+  values ('ID001',  'Rocco', 'Briggs', 'Employee', 'RoccoBriggs@ptfarm.com', 'true', '2012-04-09', '', 'RocBri', 'sample' ),
+         ('ID002',  'Yasin', 'Mann', 'Gardener', 'YasinMann@ptfarm.com', 'true', '2015-12-03', '', 'YasMan', 'sample')
+         ('ID003', 'Glen', 'Carson', 'Gardener', 'GlenCarson@ptfarm.com', 'false', '2016-07-02', '2017-07-02', 'GleCar', ''),
+         ('ID004', 'Oliver', 'Castillo', 'Administrator', 'OliverCastillo@ptfarm.com', 'true', '2020-06-06', '', 'OliCas', 'sample'),
+         ('ID005', 'Keice', 'Lin', 'Employee', 'KeiceLin@ptfarm.com', 'true', '2010-05-17', '', 'KeiLin', 'sample');
 
 
 -- -----Some useful commands about tables------
   SHOW tables;
  
   describe vendor;
-  describe Staff;
+  describe staff;
     describe waste;
   describe inventory;
  
