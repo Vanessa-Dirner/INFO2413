@@ -59,13 +59,15 @@ CREATE TABLE vendor (
 
 
 
+
+
 CREATE TABLE staff (
     userid CHAR(6) NOT NULL,
     fName VARCHAR(10) NOT NULL ,
     lName VARCHAR(10) NOT NULL ,
     jobrole VARCHAR(10) NOT NULL ,
-    email CHAR(20),
-    isactive DATE,
+    email CHAR(35),
+    isactive BOOLEAN,
     startsate DATE,
     enddate DATE,
     username VARCHAR(50),
@@ -74,13 +76,11 @@ CREATE TABLE staff (
 );
 
   insert into staff (userid, fName, lName, jobrole, email, isactive, startsate, enddate, username, passkey)
-  values ('ID001',  'Rocco', 'Briggs', 'Employee', 'RoccoBriggs@ptfarm.com', 'true', '2012-04-09', '', 'RocBri', 'sample' ),
-         ('ID002',  'Yasin', 'Mann', 'Gardener', 'YasinMann@ptfarm.com', 'true', '2015-12-03', '', 'YasMan', 'sample')
-         ('ID003', 'Glen', 'Carson', 'Gardener', 'GlenCarson@ptfarm.com', 'false', '2016-07-02', '2017-07-02', 'GleCar', ''),
-         ('ID004', 'Oliver', 'Castillo', 'Administrator', 'OliverCastillo@ptfarm.com', 'true', '2020-06-06', '', 'OliCas', 'sample'),
-         ('ID005', 'Keice', 'Lin', 'Employee', 'KeiceLin@ptfarm.com', 'true', '2010-05-17', '', 'KeiLin', 'sample');
-
-
+  values ('ID001',  'Rocco', 'Briggs', 'Employee', 'RBriggs@ptfarm.com', 'true', '2012-04-09', '', 'RocBri', 'sample' ),
+         ('ID002',  'Yasin', 'Mann', 'Gardener', 'YMann@ptfarm.com', 'true', '2015-12-03', '', 'YasMan', 'sample'),
+         ('ID003', 'Glen', 'Carson', 'Gardener', 'GCarson@ptfarm.com', 'false', '2016-07-02', '2017-07-02', 'GleCar', ''),
+         ('ID004', 'Oliver', 'Castillo', 'Administrator', 'OCastillo@ptfarm.com', 'true', '2020-06-06', '', 'OliCas', 'sample'),
+         ('ID005', 'Keice', 'Lin', 'Employee', 'KLin@ptfarm.com', 'true', '2010-05-17', '', 'KeiLin', 'sample');
 -- -----Some useful commands about tables------
   SHOW tables;
  
