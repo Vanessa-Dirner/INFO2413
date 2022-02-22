@@ -50,11 +50,11 @@ CREATE TABLE vendor (
 
 
   insert into vendor (batch, expirationdate, vendorname, seedtype, seedname, quantityavailable)
-  values ('B0021', '2020-01-10'. 'West Coast Seeds'  ,'00125'  , 'Pear', 'Bosc', 'Winter' ),
-         ( '2019-07-22', 'Canada Seed Company' ,'00608'  , 'Rhubarb', 'KangaRhu', 'Spring'),
-         (, '2021-01-10', 'Farm Direct Seeds' ,'00005'  , 'Celery', 'Conquistador', 'Winter'),
-         (, '2022-01-01' ,'Tropico' ,'00473'  , 'Lemon', 'Eureka', 'Spring'),
-         (, '2018-09-09', ''  ,'00201'  , 'Lemon', 'Baboon', 'Spring');
+  values ('B0021', '2020-01-10'. 'West Coast Seeds' , 'Pear', 'Bosc', 'Winter' ),
+         ('B0054' '2019-07-22', 'Canada Seed Company' , 'Rhubarb', 'KangaRhu', 'Spring'),
+         ('B0572', '2021-01-10', 'Farm Direct Seeds' , 'Celery', 'Conquistador', 'Winter'),
+         ('B0300', '2022-01-01' ,'Tropico' , 'Lemon', 'Eureka', 'Spring'),
+         ('B0401', '2018-09-09', 'Tropico'  , 'Lemon', 'Baboon', 'Spring');
 
 
 
