@@ -1,2 +1,2 @@
 # INFO2413
-Project for class.
+Team project for class.
