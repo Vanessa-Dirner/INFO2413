@@ -1,10 +1,4 @@
--- ---------Create the Database----------
-create database project;
 
--- -----Select thet database for use-----
-use project;
-
--- ---------Create the tables------------
 CREATE TABLE inventory (
     batch CHAR(6) NOT NULL,
     expirationdate DATE NOT NULL ,
@@ -52,12 +46,10 @@ CREATE TABLE vendor (
 
   insert into vendor (batch, expirationdate, vendorname, seedtype, seedname, quantityavailable)
   values ('B0021', '2020-01-10', 'West Coast Seeds' , 'Pear', 'Bosc', '50000' ),
-         ('B0054' '2019-07-22', 'Canada Seed Company' , 'Sunflower', 'Titan', '73900'),
+         ('B0054', '2019-07-22', 'Canada Seed Company' , 'Sunflower', 'Titan', '73900'),
          ('B0572', '2021-01-10', 'Farm Direct Seeds' , 'Celery', 'Conquistador', '21204'),
          ('B0300', '2022-01-01' ,'Tropico' , 'Lemon', 'Eureka', '58208'),
          ('B0401', '2018-09-09', 'Tropico'  , 'Grape', 'Moon Drops', '10549');
-
-
 
 
 
@@ -65,35 +57,25 @@ CREATE TABLE staff (
     userid CHAR(6) NOT NULL,
     fName VARCHAR(10) NOT NULL ,
     lName VARCHAR(10) NOT NULL ,
-    jobrole VARCHAR(10) NOT NULL ,
+    jobrole VARCHAR(15) NOT NULL ,
     email CHAR(35),
-    isactive BOOLEAN,
+    isactive BIT,
     startsate DATE,
     enddate DATE,
     username VARCHAR(50),
-    passkey CHAR(4) NOT NULL,
+    passkey CHAR(14) NOT NULL,
     PRIMARY KEY (userid)
 );
 
   insert into staff (userid, fName, lName, jobrole, email, isactive, startsate, enddate, username, passkey)
-  values ('ID001',  'Rocco', 'Briggs', 'Employee', 'RBriggs@ptfarm.com', 'true', '2012-04-09', '', 'RocBri', 'sample' ),
-         ('ID002',  'Yasin', 'Mann', 'Gardener', 'YMann@ptfarm.com', 'true', '2015-12-03', '', 'YasMan', 'sample'),
-         ('ID003', 'Glen', 'Carson', 'Gardener', 'GCarson@ptfarm.com', 'false', '2016-07-02', '2017-07-02', 'GleCar', ''),
+  values ('ID001',  'Rocco', 'Briggs', 'Employee', 'RBriggs@ptfarm.com', 'true', '2012-04-09', NULL, 'RocBri', 'sample' ),
+         ('ID002',  'Yasin', 'Mann', 'Gardener', 'YMann@ptfarm.com', 'true', '2015-12-03', NULL, 'YasMan', 'sample'),
+         ('ID003', 'Glen', 'Carson', 'Gardener', 'GCarson@ptfarm.com', 'false', '2016-07-02', '2017-07-02', 'GleCar', 'sample'),
          ('ID004', 'Oliver', 'Castillo', 'Administrator', 'OCastillo@ptfarm.com', 'true', '2020-06-06', '', 'OliCas', 'sample'),
-         ('ID005', 'Keice', 'Lin', 'Employee', 'KLin@ptfarm.com', 'true', '2010-05-17', '', 'KeiLin', 'sample');
--- -----Some useful commands about tables------
-  SHOW tables;
- 
-  describe vendor;
-  describe staff;
-    describe waste;
-  describe inventory;
- 
-  show create table vendor;
- 
-  -- ------------------Fill the Tables------------------
- 
- 
+         ('ID005', 'Keice', 'Lin', 'Employee', 'KLin@ptfarm.com', 'true', '2010-05-17', NULL, 'KeiLin', 'sample');
 
 
- drop database project;
+ 
+  drop table staff;
+
+  drop database project;
