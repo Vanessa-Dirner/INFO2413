@@ -35,9 +35,9 @@ CREATE TABLE waste (
 
 
 CREATE TABLE vendor (
-    batch CHAR(4) NOT NULL,
+    batch CHAR(5) NOT NULL,
     expirationdate DATE NOT NULL ,
-    vendorname CHAR(4) NOT NULL,
+    vendorname CHAR(25) NOT NULL,
     seedtype VARCHAR(25) NOT NULL ,
     seedname VARCHAR(20) NOT NULL ,
     quantityavailable CHAR(7) NOT NULL ,
@@ -68,8 +68,8 @@ CREATE TABLE staff (
 );
 
   insert into staff (userid, fName, lName, jobrole, email, isactive, startsate, enddate, username, passkey)
-  values ('ID001',  'Rocco', 'Briggs', 'Employee', 'RBriggs@ptfarm.com', 'true', '2012-04-09', NULL, 'RocBri', 'sample' ),
-         ('ID002',  'Yasin', 'Mann', 'Gardener', 'YMann@ptfarm.com', 'true', '2015-12-03', NULL, 'YasMan', 'sample'),
+  values ('ID001', 'Rocco', 'Briggs', 'Employee', 'RBriggs@ptfarm.com', 'true', '2012-04-09', NULL, 'RocBri', 'sample' ),
+         ('ID002', 'Yasin', 'Mann', 'Gardener', 'YMann@ptfarm.com', 'true', '2015-12-03', NULL, 'YasMan', 'sample'),
          ('ID003', 'Glen', 'Carson', 'Gardener', 'GCarson@ptfarm.com', 'false', '2016-07-02', '2017-07-02', 'GleCar', 'sample'),
          ('ID004', 'Oliver', 'Castillo', 'Administrator', 'OCastillo@ptfarm.com', 'true', '2020-06-06', '', 'OliCas', 'sample'),
          ('ID005', 'Keice', 'Lin', 'Employee', 'KLin@ptfarm.com', 'true', '2010-05-17', NULL, 'KeiLin', 'sample');
