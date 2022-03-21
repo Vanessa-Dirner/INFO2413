@@ -14,4 +14,8 @@ TODO: How to run ASP portion.
 
 TODO: How to QA test code.
 
+TODO: Registration page
+
+TODO: AI
+
 Happy coding!
