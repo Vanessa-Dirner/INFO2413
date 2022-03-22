@@ -1,31 +1,33 @@
 ﻿using System;
-
+using System.Net.Mail;
+using System.Net;
+using System.Data.SqlClient;
 public class expirynotify
 {
 	public expirynotify()
 	{
-        // Get seeds expiring in 1 year or less
-        sqlCon.Open();
+        string NULL = null;
+
+        using (SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=ASPLogin;Integrated Security=True;"))
+
+            // Get seeds expiring in 1 year or less
+            sqlCon.Open();
 		string expiringSeeds = "SELECT * FROM inventory WHERE expirationdate >= dateadd(year, +1, getdate())";
         // notify
 		if (expiringSeeds != NULL)
         {
-			Write-line "The following seeds are expiring within 1 year: "
-			Write-line	expiringSeeds
+            Console.WriteLine("The following seeds are expiring within 1 year: ");
+            Console.WriteLine("expiringSeeds");
         }
 
 		// if seeds have expired, move to expired table
 		string expiredSeeds = "SELECT * FROM inventory WHERE expirationdate < getdate()"
-		if (expiredSeeds != NULL)
+
+        if (expiredSeeds != NULL)
         {
-			string moveExpiredSeeds = "" +
-                "BEGIN TRANSACTION" +
-                "INSERT INTO waste" +
-                "SELECT * FROM inventory " +
-                "WHERE expirationdate < getdate();" +
-                "DELETE FROM inventory" +
-                "where expirationdate < getdate();" +
-                "COMMIT"
+			string moveExpiredSeeds = "BEGIN TRANSACTION; INSERT INTO waste; SELECT * FROM inventory WHERE expirationdate < getdate(); DELETE FROM inventorywhere expirationdate < getdate(); COMMIT "
+            SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+            sqlCmd.Parameters.AddWithValue(moveExpiredSeeds )
         }
 
         // email notification to administrator
