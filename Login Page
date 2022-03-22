@@ -1,0 +1,66 @@
+// Login Page.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login Page.aspx.cs" Inherits="Vegetable_Seeds_Management.Login_Page" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="LoginPage.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="loginbox" >
+        <img src="user-01.png" alt="User" class="user" />
+        <h2>Log In</h2>
+        <form id="form2" runat="server">
+            <asp:Label Text="Email" CssClass="lblusername" runat="server"></asp:Label>
+            <asp:TextBox ID= "txtUserName" runat="server" CssClass="txtusername"></asp:TextBox>
+            <asp:Label Text="Password" CssClass="lblpassword" runat="server"></asp:Label>
+            <asp:TextBox ID ="txtPassword" runat="server" CssClass="txtpassword"></asp:TextBox>
+            <asp:Button Text="Sign In" CssClass="btnsubmit" runat="server" OnClick="Btn_Login" />
+            <asp:Label ID="lblErrorMessage" runat="server" Text="Incorrect User Credentials" ForeColor="Red"></asp:Label>
+        </form>
+    </div> 
+</body>
+</html>
+
+// Login Page.aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace Vegetable_Seeds_Management
+{
+    public partial class Login_Page : System.Web.UI.Page
+    {
+        SqlConnection SQLConn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog=Online vegetable seeds management;Integrated Security=True");
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            lblErrorMessage.Visible = false;
+        }
+
+        protected void Btn_Login(object sender, EventArgs e)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog = Online vegetable seeds management;Integrated Security=True;"))
+            {
+                sqlCon.Open();
+                string query = "SELECT COUNT(1) FROM staff WHERE userName=@userName AND passwordKey=@passwordKey";
+                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                sqlCmd.Parameters.AddWithValue("@userName", txtUserName.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@passwordKey", txtPassword.Text.Trim());
+                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                if (count == 1)
+                {
+                    Session["userName"] = txtUserName.Text.Trim();
+                    Response.Redirect("Admin Dashboard.html");
+                }
+                else { lblErrorMessage.Visible = true; }
+            }
+        }
+    }
+}
