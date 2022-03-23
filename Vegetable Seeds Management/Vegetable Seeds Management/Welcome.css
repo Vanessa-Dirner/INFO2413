@@ -1,0 +1,38 @@
+﻿* {box-sizing: border-box;}
+body {
+    background-color: #b6ff00;
+    color: #000080;
+    font-family: sans-serif;
+    margin: 0;
+}
+.wrapper {
+    background-color: #F5F5F5;
+    padding: 2em;
+}
+header {
+    background-color: #101010;
+    background-image: url('Mountain-landscape.jpg');
+    background-size: 100%, 100%;
+    color: #FFF;
+    font-size: 90%;
+    min-height: 200px;
+}
+.home, .content {
+    height: 20vh;
+    padding-left: 10%;
+    padding-top: 2em;
+}
+.home {
+    height: 50vh;
+    padding-left: 8em;
+    padding-top: 5em;
+}
+.content {
+    height: 30vh;
+    padding-left: 8em;
+    padding-top: 1em;
+}
+.wrapper {
+    margin: auto;
+    width: 80%;
+}
