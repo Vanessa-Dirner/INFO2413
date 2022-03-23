@@ -1,4 +1,7 @@
 # INFO2413
+
+Project for class.
+
 Team project for class.
 
 HOW TO for KPU team:
