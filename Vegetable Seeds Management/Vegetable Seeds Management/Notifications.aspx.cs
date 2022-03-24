@@ -44,11 +44,6 @@ namespace Vegetable_Seeds_Management
 
         protected void HarvestedSeedsReport_Click(object sender, EventArgs e)
         {
-        }
-
-
-            protected void WastedReport_CheckedChanged(object sender, EventArgs e)
-        {
             using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True"))
             {
                 string mainconn = ConfigurationManager.ConnectionStrings["Myconnection"].ConnectionString;
@@ -56,7 +51,7 @@ namespace Vegetable_Seeds_Management
                 sqlconn.Open();
                 Response.Write("HIII");
                 SqlCommand sqlcomm = new SqlCommand();
-                string sqlquery = "SELECT * FROM inventory order by quantity desc";
+                string sqlquery = "SELECT * FROM inventory";
                 sqlcomm.CommandText = sqlquery;
                 sqlcomm.Connection = sqlconn;
                 DataTable dt = new DataTable();
@@ -66,6 +61,12 @@ namespace Vegetable_Seeds_Management
                 GridView2.DataBind();
                 sqlconn.Close();
             }
+        }
+
+
+            protected void WastedReport_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

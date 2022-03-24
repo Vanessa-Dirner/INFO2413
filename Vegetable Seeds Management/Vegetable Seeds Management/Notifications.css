@@ -1,11 +1,12 @@
 ﻿body {
-    margin: 0;
+    margin: 10;
     padding: 0;
+    background-image: url('report.jpg');
 }
 
 .header {
     height: 100vh;
-    background-image: url('report.jpg');
+ 
     background-size: cover;
     background-position: center;
     display: flex;
