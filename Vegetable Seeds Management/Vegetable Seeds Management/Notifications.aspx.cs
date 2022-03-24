@@ -7,37 +7,43 @@ using System.Web.UI.WebControls;
 using System.Net.Mail;
 using System.Net;
 using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
 
 namespace Vegetable_Seeds_Management
 {
     public partial class Notifications : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        { }
+        {
+            
+        }
 
         protected void WastedSeedsReport_Click(object sender, EventArgs e)
         {
 
-
                 if (WastedReport.Checked)
                 {
-                    using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True"))
 
-                    // Get seeds expiring in 1 year or less
-                    sqlCon.Open();
-                    string WastedSeeds = "SELECT * FROM waste order by quantity desc";
-
-                    // notify
-                    if (!string.IsNullOrEmpty(WastedSeeds))
-                    {
-                        Console.WriteLine("The following seeds are expiring within 1 year: ");
-                        Console.WriteLine("expiringSeeds");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No data is available.");
-                    }
-            }
+                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True"))
+                {
+                    string mainconn = ConfigurationManager.ConnectionStrings["Myconnection"].ConnectionString;
+                    SqlConnection sqlconn = new SqlConnection(mainconn);
+                    sqlconn.Open();
+                    Response.Write("Connection Established...");
+                    SqlCommand sqlcomm = new SqlCommand();
+                    string sqlquery = "SELECT * FROM waste order by quantity desc";
+                    sqlcomm.CommandText = sqlquery;
+                    sqlcomm.Connection = sqlconn;
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
+                    sda.Fill(dt);
+                    GridView2.DataSource = dt;
+                    GridView2.DataBind();
+                    sqlconn.Close();
+                }
+                
+                 }
                 else if (HarvestedReport.Checked)
                 {
                     
@@ -48,10 +54,30 @@ namespace Vegetable_Seeds_Management
 
         }
 
+        protected void WastedReport_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
-
+    /*
+     * // Get seeds expiring in 1 year or less
+                    sqlCon.Open();
+                        SqlCommand sqlCmd = new SqlCommand(WastedSeeds, sqlCon);
+                        string WastedSeeds = "SELECT * FROM waste order by quantity desc";
+                       
+                        // notify
+                        if (!string.IsNullOrEmpty(WastedSeeds))
+                        {
+                            Console.WriteLine("The following seeds are expiring within 1 year: ");
+                            Console.WriteLine("expiringSeeds");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No data is available.");
+                        }
+                    }
 
 
 /*
