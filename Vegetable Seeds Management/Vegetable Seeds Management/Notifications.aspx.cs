@@ -22,9 +22,6 @@ namespace Vegetable_Seeds_Management
         protected void WastedSeedsReport_Click(object sender, EventArgs e)
         {
 
-                if (WastedReport.Checked)
-                {
-
                 using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True"))
                 {
                     string mainconn = ConfigurationManager.ConnectionStrings["Myconnection"].ConnectionString;
@@ -43,20 +40,32 @@ namespace Vegetable_Seeds_Management
                     sqlconn.Close();
                 }
                 
-                 }
-                else if (HarvestedReport.Checked)
-                {
-                    
-                }
-           
-
-            
-
         }
 
-        protected void WastedReport_CheckedChanged(object sender, EventArgs e)
+        protected void HarvestedSeedsReport_Click(object sender, EventArgs e)
         {
+        }
 
+
+            protected void WastedReport_CheckedChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True"))
+            {
+                string mainconn = ConfigurationManager.ConnectionStrings["Myconnection"].ConnectionString;
+                SqlConnection sqlconn = new SqlConnection(mainconn);
+                sqlconn.Open();
+                Response.Write("HIII");
+                SqlCommand sqlcomm = new SqlCommand();
+                string sqlquery = "SELECT * FROM inventory order by quantity desc";
+                sqlcomm.CommandText = sqlquery;
+                sqlcomm.Connection = sqlconn;
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
+                sda.Fill(dt);
+                GridView2.DataSource = dt;
+                GridView2.DataBind();
+                sqlconn.Close();
+            }
         }
     }
 }
