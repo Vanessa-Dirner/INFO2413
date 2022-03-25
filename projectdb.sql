@@ -26,6 +26,29 @@ CREATE TABLE inventory (
          ('B0401', '2018-09-09'  ,'68032'  , 'Harvested','Grape', 'Autumn');
 
 
+CREATE TABLE planted (
+    batch CHAR(6) NOT NULL,
+    dateplanted DATE NOT NULL,
+    quantity VARCHAR(5) NOT NULL ,
+    seedtype CHAR(15) NOT NULL,
+    seedname CHAR(20) NOT NULL ,
+    plantedby CHAR(30) NOT NULL,
+    PRIMARY KEY (batch, dateplanted, plantedby)
+);
+
+ insert into planted (batch, dateplanted, quantity, seedtype, seedname, plantedby)
+  values ('B0011', '2023-01-14'  ,'05000'  , 'Harvested', 'Sunflower', 'YasMan' ),
+         ('B0012', '2022-07-22'  ,'10000'  , 'Bought', 'Tomato', 'GleCar'),
+         ('B0013', '2024-01-10'  ,'05000'  , 'Bought', 'Apple', 'YasMan'),
+         ('B0014', '2023-12-23'  ,'05000'  , 'Harvested', 'Grape', 'YasMan'),
+         ('B0015', '2022-04-20'  ,'05000'  , 'Harvested', 'Blueberry', 'YasMan'),
+         ('B0021', '2020-01-10'  ,'10000'  , 'Harvested','Pear', 'YasMan' ),
+         ('B0054', '2019-07-22'  ,'01843'  , 'Sunflower', 'Titan', 'YasMan'),
+         ('B0572', '2021-01-10'  ,'24052'  , 'Bought', 'Celery', 'GleCar'),
+         ('B0300', '2022-01-01'  ,'05921'  , 'Bought', 'Lemon', 'GleCar'),
+         ('B0401', '2018-09-09'  ,'68032'  , 'Harvested','Grape', 'GleCar');
+
+
 CREATE TABLE waste (
     wasteid CHAR(5) NOT NULL, 
   	batch CHAR(5) NOT NULL,
