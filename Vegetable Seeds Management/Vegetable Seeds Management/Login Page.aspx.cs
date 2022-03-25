@@ -11,7 +11,7 @@ namespace Vegetable_Seeds_Management
 {
     public partial class Login_Page : System.Web.UI.Page
     {
-        SqlConnection SQLConn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog=Online vegetable seeds management;Integrated Security=True");
+        SqlConnection SQLConn = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             lblErrorMessage.Visible = false;
@@ -19,13 +19,13 @@ namespace Vegetable_Seeds_Management
 
         protected void Btn_Login(object sender, EventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog = Online vegetable seeds management;Integrated Security=True;"))
+            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True"))
             {
                 sqlCon.Open();
-                string query = "SELECT COUNT(1) FROM staff WHERE userName=@userName AND passwordKey=@passwordKey";
+                string query = "SELECT COUNT(1) FROM staff WHERE username=@username AND passkey=@passkey";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                sqlCmd.Parameters.AddWithValue("@userName", txtUserName.Text.Trim());
-                sqlCmd.Parameters.AddWithValue("@passwordKey", txtPassword.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@username", txtUserName.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@passkey", txtPassword.Text.Trim());
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                 if (count == 1)
                 {
@@ -33,6 +33,8 @@ namespace Vegetable_Seeds_Management
                     Response.Redirect("Admin Dashboard.html");
                 }
                 else { lblErrorMessage.Visible = true; }
+
+                Session.Add("Userid", txtUserName.Text);
             }
         }
     }

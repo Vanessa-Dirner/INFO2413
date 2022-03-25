@@ -14,7 +14,7 @@ namespace Vegetable_Seeds_Management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Userid"] == null) Response.Redirect("Login Page.aspx");
         }
 
         protected void ButSearch_Click(object sender, EventArgs e)
@@ -23,11 +23,11 @@ namespace Vegetable_Seeds_Management
             SqlConnection sqlconn = new SqlConnection(mainconn);
             sqlconn.Open();
             SqlCommand sqlcomm = new SqlCommand();
-            string sqlquery = "select * from inventory where seedName like '%'+@seedName+'%' or plantingTime like '%'+@plantingTime+'%' ";
+            string sqlquery = "select * from inventory where seedName like '%'+@seedname+'%' or plantingtime like '%'+@plantingtime+'%' ";
             sqlcomm.CommandText = sqlquery;
             sqlcomm.Connection = sqlconn;
-            sqlcomm.Parameters.AddWithValue("seedName", TxtSeedName.Text);
-            sqlcomm.Parameters.AddWithValue("plantingTime", TxtSeedName.Text);
+            sqlcomm.Parameters.AddWithValue("seedname", TxtSeedName.Text);
+            sqlcomm.Parameters.AddWithValue("plantingtime", TxtSeedName.Text);
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
             sda.Fill(dt);
