@@ -27,9 +27,8 @@ namespace Vegetable_Seeds_Management
                     string mainconn = ConfigurationManager.ConnectionStrings["Myconnection"].ConnectionString;
                     SqlConnection sqlconn = new SqlConnection(mainconn);
                     sqlconn.Open();
-                    Response.Write("Connection Established...");
                     SqlCommand sqlcomm = new SqlCommand();
-                    string sqlquery = "SELECT * FROM waste order by quantity desc";
+                    string sqlquery = "SELECT TOP 5 quantity, seedname, batch FROM inventory WHERE seedtype = 'harvested' ORDER BY quantity DESC";
                     sqlcomm.CommandText = sqlquery;
                     sqlcomm.Connection = sqlconn;
                     DataTable dt = new DataTable();
@@ -49,9 +48,8 @@ namespace Vegetable_Seeds_Management
                 string mainconn = ConfigurationManager.ConnectionStrings["Myconnection"].ConnectionString;
                 SqlConnection sqlconn = new SqlConnection(mainconn);
                 sqlconn.Open();
-                Response.Write("HIII");
                 SqlCommand sqlcomm = new SqlCommand();
-                string sqlquery = "SELECT * FROM inventory";
+                string sqlquery = "SELECT TOP 5 quantity, seedname, wasteid, expirationdate FROM waste ORDER BY quantity DESC";            
                 sqlcomm.CommandText = sqlquery;
                 sqlcomm.Connection = sqlconn;
                 DataTable dt = new DataTable();
@@ -71,48 +69,51 @@ namespace Vegetable_Seeds_Management
     }
 }
 
-    /*
-     * // Get seeds expiring in 1 year or less
-                    sqlCon.Open();
-                        SqlCommand sqlCmd = new SqlCommand(WastedSeeds, sqlCon);
-                        string WastedSeeds = "SELECT * FROM waste order by quantity desc";
-                       
-                        // notify
-                        if (!string.IsNullOrEmpty(WastedSeeds))
-                        {
-                            Console.WriteLine("The following seeds are expiring within 1 year: ");
-                            Console.WriteLine("expiringSeeds");
-                        }
-                        else
-                        {
-                            Console.WriteLine("No data is available.");
-                        }
+//  SELECT * FROM inventory WHERE seedtype = 'harvested' order by quantity desc
+
+/////////////////////////////// TODO //// 
+/*
+ * // Get seeds expiring in 1 year or less
+                sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand(WastedSeeds, sqlCon);
+                    string WastedSeeds = "SELECT * FROM waste order by quantity desc";
+
+                    // notify
+                    if (!string.IsNullOrEmpty(WastedSeeds))
+                    {
+                        Console.WriteLine("The following seeds are expiring within 1 year: ");
+                        Console.WriteLine("expiringSeeds");
                     }
+                    else
+                    {
+                        Console.WriteLine("No data is available.");
+                    }
+                }
 
 
 /*
- 
-        public class expirynotify
+
+    public class expirynotify
+    {
+        public expirynotify()
         {
-            public expirynotify()
-            {
-                
-                // if seeds have expired, move to expired table
-                /* string expiredSeeds = "SELECT * FROM inventory WHERE expirationdate < getdate()"
 
-                     if (string.IsNullOrEmpty(expiredSeeds))
-                             {
-                                 string moveExpiredSeeds = "BEGIN TRANSACTION; INSERT INTO waste; SELECT * FROM inventory WHERE expirationdate < getdate(); DELETE FROM inventorywhere expirationdate < getdate(); COMMIT "
-                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                                 sqlCmd.Parameters.AddWithValue(moveExpiredSeeds)
-                     }
-                
-                // email notification to administrator
+            // if seeds have expired, move to expired table
+            /* string expiredSeeds = "SELECT * FROM inventory WHERE expirationdate < getdate()"
 
-            }
+                 if (string.IsNullOrEmpty(expiredSeeds))
+                         {
+                             string moveExpiredSeeds = "BEGIN TRANSACTION; INSERT INTO waste; SELECT * FROM inventory WHERE expirationdate < getdate(); DELETE FROM inventorywhere expirationdate < getdate(); COMMIT "
+                     SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+                             sqlCmd.Parameters.AddWithValue(moveExpiredSeeds)
+                 }
+
+            // email notification to administrator
+
         }
-        
- */
+    }
+
+*/
 
 /*
  * 
