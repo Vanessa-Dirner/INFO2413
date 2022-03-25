@@ -28,7 +28,7 @@ namespace Vegetable_Seeds_Management
                     SqlConnection sqlconn = new SqlConnection(mainconn);
                     sqlconn.Open();
                     SqlCommand sqlcomm = new SqlCommand();
-                    string sqlquery = "SELECT TOP 5 quantity, seedname, batch, expirationdate FROM inventory WHERE seedtype = 'harvested' AND expirationdate  > DATEADD(year,-1,GETDATE()) ORDER BY quantity DESC"; 
+                    string sqlquery = " SELECT TOP 5 quantity, seedname, wasteid, expirationdate FROM waste WHERE expirationdate  > DATEADD(year,-1,GETDATE()) ORDER BY quantity DESC"; 
                 sqlcomm.CommandText = sqlquery;
                     sqlcomm.Connection = sqlconn;
                     DataTable dt = new DataTable();
@@ -49,7 +49,7 @@ namespace Vegetable_Seeds_Management
                 SqlConnection sqlconn = new SqlConnection(mainconn);
                 sqlconn.Open();
                 SqlCommand sqlcomm = new SqlCommand();
-                string sqlquery = "SELECT TOP 5 quantity, seedname, wasteid, expirationdate FROM waste WHERE expirationdate > DATEADD(year, -1, GETDATE()) ORDER BY quantity DESC";       
+                string sqlquery = " SELECT TOP 5 quantity, seedname, batch, aquirydate FROM inventory WHERE seedtype = 'harvested' AND aquirydate  > DATEADD(year,-1,GETDATE()) ORDER BY quantity DESC";       
                 sqlcomm.CommandText = sqlquery;
                 sqlcomm.Connection = sqlconn;
                 DataTable dt = new DataTable();
@@ -69,12 +69,18 @@ namespace Vegetable_Seeds_Management
                 SqlConnection sqlconn = new SqlConnection(mainconn);
                 sqlconn.Open();
                 SqlCommand sqlcomm = new SqlCommand();
-                string sqlquery = "";
+                string sqlquery = "SELECT * FROM planted WHERE dateplanted >= DATEADD(day,-30,GETDATE()) and dateplanted <= getdate()";
                 sqlcomm.CommandText = sqlquery;
                 sqlcomm.Connection = sqlconn;
                 DataTable dt = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
                 sda.Fill(dt);
+
+                Console.WriteLine(dt);
+                Response.Write(dt);
+                System.Diagnostics.Debug.WriteLine(dt);
+
+
                 GridView2.DataSource = dt;
                 GridView2.DataBind();
                 sqlconn.Close();
