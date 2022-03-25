@@ -16,7 +16,7 @@ namespace Vegetable_Seeds_Management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["Userid"] == null) Response.Redirect("Login Page.aspx");
         }
 
         protected void WastedSeedsReport_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Threading;
 
 namespace Vegetable_Seeds_Management
 {
@@ -14,7 +15,10 @@ namespace Vegetable_Seeds_Management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Userid"] == null) Response.Redirect("Login Page.aspx");
+
             lblConfirm.Visible = false;
+
         }
 
         protected void InsertSeedPurchase_Click(object sender, EventArgs e)
@@ -36,6 +40,8 @@ namespace Vegetable_Seeds_Management
                 SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
                 sqlconn.Close();
                 lblConfirm.Visible = true;
+                Thread.Sleep(4000);
+               
             }
         }
 
