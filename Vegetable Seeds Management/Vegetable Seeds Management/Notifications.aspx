@@ -14,6 +14,7 @@
             <h3>Select a report to generate:</h3>
             <asp:button text="Report Wasted" OnClick="WastedSeedsReport_Click" runat="server"/>
             <asp:button text="Report Harvested" OnClick="HarvestedSeedsReport_Click" runat="server"/>
+            <asp:button text="Report Performance" OnClick="PlantedSeedsReport_Click" runat="server"/>
             <asp:GridView ID="GridView2" runat="server" ></asp:GridView> 
         </div>
     </form>

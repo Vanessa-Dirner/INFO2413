@@ -28,8 +28,8 @@ namespace Vegetable_Seeds_Management
                     SqlConnection sqlconn = new SqlConnection(mainconn);
                     sqlconn.Open();
                     SqlCommand sqlcomm = new SqlCommand();
-                    string sqlquery = "SELECT TOP 5 quantity, seedname, batch FROM inventory WHERE seedtype = 'harvested' ORDER BY quantity DESC";
-                    sqlcomm.CommandText = sqlquery;
+                    string sqlquery = "SELECT TOP 5 quantity, seedname, batch, expirationdate FROM inventory WHERE seedtype = 'harvested' AND expirationdate  > DATEADD(year,-1,GETDATE()) ORDER BY quantity DESC"; 
+                sqlcomm.CommandText = sqlquery;
                     sqlcomm.Connection = sqlconn;
                     DataTable dt = new DataTable();
                     SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
@@ -49,7 +49,7 @@ namespace Vegetable_Seeds_Management
                 SqlConnection sqlconn = new SqlConnection(mainconn);
                 sqlconn.Open();
                 SqlCommand sqlcomm = new SqlCommand();
-                string sqlquery = "SELECT TOP 5 quantity, seedname, wasteid, expirationdate FROM waste ORDER BY quantity DESC";            
+                string sqlquery = "SELECT TOP 5 quantity, seedname, wasteid, expirationdate FROM waste WHERE expirationdate > DATEADD(year, -1, GETDATE()) ORDER BY quantity DESC";       
                 sqlcomm.CommandText = sqlquery;
                 sqlcomm.Connection = sqlconn;
                 DataTable dt = new DataTable();
@@ -61,11 +61,26 @@ namespace Vegetable_Seeds_Management
             }
         }
 
-
-            protected void WastedReport_CheckedChanged(object sender, EventArgs e)
+        protected void PlantedSeedsReport_Click(object sender, EventArgs e)
         {
-            
+            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True"))
+            {
+                string mainconn = ConfigurationManager.ConnectionStrings["Myconnection"].ConnectionString;
+                SqlConnection sqlconn = new SqlConnection(mainconn);
+                sqlconn.Open();
+                SqlCommand sqlcomm = new SqlCommand();
+                string sqlquery = "";
+                sqlcomm.CommandText = sqlquery;
+                sqlcomm.Connection = sqlconn;
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
+                sda.Fill(dt);
+                GridView2.DataSource = dt;
+                GridView2.DataBind();
+                sqlconn.Close();
+            }
         }
+
     }
 }
 
