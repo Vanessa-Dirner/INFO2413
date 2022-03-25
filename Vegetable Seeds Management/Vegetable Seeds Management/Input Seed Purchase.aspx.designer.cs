@@ -24,57 +24,57 @@ namespace Vegetable_Seeds_Management
         protected global::System.Web.UI.HtmlControls.HtmlForm form3;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtExpirationDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtExpirationDate;
 
         /// <summary>
-        /// Quantity control.
+        /// txtQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Quantity;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
 
         /// <summary>
-        /// Bought or Harvested control.
+        /// txtSeedType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Bought or Harvested;
+        protected global::System.Web.UI.WebControls.TextBox txtSeedType;
 
         /// <summary>
-        /// SeedName control.
+        /// txtSeedName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SeedName;
+        protected global::System.Web.UI.WebControls.TextBox txtSeedName;
 
         /// <summary>
-        /// PlantingTime control.
+        /// txtPlantingTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PlantingTime;
+        protected global::System.Web.UI.WebControls.TextBox txtPlantingTime;
 
         /// <summary>
-        /// lblErrorMessage control.
+        /// lblConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
+        protected global::System.Web.UI.WebControls.Label lblConfirm;
     }
 }

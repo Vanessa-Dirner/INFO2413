@@ -14,7 +14,7 @@ namespace Vegetable_Seeds_Management
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblErrorMessage.Visible = false;
+            lblConfirm.Visible = false;
         }
 
         protected void InsertSeedPurchase_Click(object sender, EventArgs e)
@@ -25,18 +25,17 @@ namespace Vegetable_Seeds_Management
                 SqlConnection sqlconn = new SqlConnection(mainconn);
                 sqlconn.Open();
                 SqlCommand sqlcomm = new SqlCommand();
-                string sqlquery = "INSERT INTO inventory (batch, dateplanted, quantity, seedtype, seedname, plantedby) " +
-                "values('B0011', '2022-03-14', '00306', 'Harvested', 'Sunflower', 'YasMan')," +
-                "('B0012', '2022-03-22', '00034', 'Bought', 'Tomato', 'GleCar')," +
-                "('B0013', '2022-03-10', '00103', 'Bought', 'Apple', 'YasMan')," +
-                "('B0014', '2022-03-23', '00035', 'Harvested', 'Grape', 'YasMan'); ";
-                    sqlcomm.CommandText = sqlquery;
+                string sqlquery = "INSERT INTO inventory (batch, aquirydate, expirationdate, quantity, seedtype, seedname, plantingtime) values('%'+@batch+'%', '%'+@aquirydate+'%', '%'+@expirationdate+'%', '%'+@quantity+'%', '%'+@seedtype+'%', '%'+@seedname+'%', '%'+@plantingtime+'%');";
+                sqlcomm.CommandText = sqlquery;
                 sqlcomm.Connection = sqlconn;
+                sqlcomm.Parameters.AddWithValue("expirationdate", txtExpirationDate.Text.Trim());
+                sqlcomm.Parameters.AddWithValue("quantity", txtQuantity.Text.Trim());
+                sqlcomm.Parameters.AddWithValue("seedtype", txtSeedType.Text.Trim());
+                sqlcomm.Parameters.AddWithValue("seedname", txtSeedName.Text.Trim());
                 DataTable dt = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
                 sqlconn.Close();
-
-                lblErrorMessage.Visible = true;
+                lblConfirm.Visible = true;
             }
         }
 

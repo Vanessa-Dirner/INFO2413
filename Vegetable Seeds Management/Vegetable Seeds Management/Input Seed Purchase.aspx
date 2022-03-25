@@ -11,17 +11,17 @@
     <form id="form3" runat="server">
         <div>
             <asp:Label Text="Expiration Date" CssClass="lblusername" runat="server"></asp:Label>
-            <asp:TextBox ID= "TextBox1" runat="server" CssClass="txtusername"></asp:TextBox>
+            <asp:TextBox ID= "ExpirationDate" runat="server" CssClass="txtusername"></asp:TextBox>
             <asp:Label Text="Quantity" CssClass="lblusername" runat="server"></asp:Label>
             <asp:TextBox ID= "Quantity" runat="server" CssClass="txtusername"></asp:TextBox>
             <asp:Label Text="Bought or Harvested?" CssClass="lblusername" runat="server"></asp:Label>
-            <asp:TextBox ID= "BoughtorHarvested" runat="server" CssClass="txtusername"></asp:TextBox>
+            <asp:TextBox ID= "SeedType" runat="server" CssClass="txtusername"></asp:TextBox>
              <asp:Label Text="Seed Name" CssClass="lblusername" runat="server"></asp:Label>
             <asp:TextBox ID= "SeedName" runat="server" CssClass="txtusername"></asp:TextBox>
             <asp:Label Text="Planting Time" CssClass="lblusername" runat="server"></asp:Label>
             <asp:TextBox ID= "PlantingTime" runat="server" CssClass="txtusername"></asp:TextBox>
             <asp:Button Text="Add to Inventory" CssClass="btnsubmit" runat="server" OnClick="InsertSeedPurchase_Click" />
-            <asp:Label ID="lblErrorMessage" runat="server" Text="Inventory Updated" ForeColor="Red"></asp:Label>
+            <asp:Label ID="lblConfirm" runat="server" Text="Inventory Updated" ForeColor="Red"></asp:Label>
         </div>
     </form>
 </body>
