@@ -1,39 +1,57 @@
-﻿using System;
++﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Vegetable_Seeds_Management
 {
     public partial class Register : System.Web.UI.Page
     {
+        SqlConnection SQLConn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog=Online vegetable seeds management;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Userid"] == null) Response.Redirect("Login Page.aspx");
+            if (!IsPostBack)
+            {
+                Clear();
+            }
         }
 
-        protected void Btn_Register(object sender, EventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-UB0LHNH;Initial Catalog=project;Integrated Security=True"))
+            if (txtUsername.Text == "" || txtPassword.Text == "")
+                lblErrorMessage.Text = "Please fill Mandatory Fields";
+            else if (txtPassword.Text != txtConfirmPassword.Text)
+                lblErrorMessage.Text = "Password do not match";
+            else
             {
-                sqlCon.Open();
-                string query = "SELECT COUNT(1) FROM staff WHERE username=@username AND passkey=@passkey";
-                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                sqlCmd.Parameters.AddWithValue("@username", txtUserName.Text.Trim());
-                sqlCmd.Parameters.AddWithValue("@passkey", txtPassword.Text.Trim());
-                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if (count == 1)
-                {
-                    Session["userName"] = txtUserName.Text.Trim();
-                    Response.Redirect("Admin Dashboard.html");
-                }
-                else { lblErrorMessage.Visible = true; }
 
-                Session.Add("Userid", txtUserName.Text);
+                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog = Online vegetable seeds management;Integrated Security=True;"))
+                {
+                    sqlCon.Open();
+                    SqlCommand sqlCommand = new SqlCommand("StaffAddorEdit", sqlCon);
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@userid", Convert.ToInt32(hfuserid.Value == "" ? "0" : hfuserid.Value));
+                    sqlCommand.Parameters.AddWithValue("@firstName", txtFirstName.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@lastName", txtLastName.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@jobRole", ddlJobRole.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("@eMail", txtEmail.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@userName", txtUsername.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@passwordKey", txtPassword.Text.Trim());
+                    sqlCommand.ExecuteNonQuery();
+                    Clear();
+                    lblSuccessMessage.Text = "Submitted Successfully";
+                }
             }
+        }
+        void Clear()
+        {
+            txtFirstName.Text = txtLastName.Text = txtEmail.Text = txtUsername.Text = txtPassword.Text =
+            txtConfirmPassword.Text = ""; hfuserid.Value = "";
+            lblSuccessMessage.Text = lblErrorMessage.Text = "";
         }
     }
 }
