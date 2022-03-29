@@ -4,4 +4,33 @@ body {
   margin: 0;
 }
 
-.txtFirstName {
+.txtFirstName, .txtLastName {
+  margin-bottom: 24px;
+  width: 100%
+}
+
+.ddlJobRole {
+  margin-bottom 24px;
+  width: 100%
+}
+
+.txtEmail, .txtUsername, .txtPassword, .txtConfirmPassword {
+  margin-bottom 35px;
+  width: 100%
+}
+
+.btnSubmit {
+  margin-bottom 24px;
+  width: 100%
+  font-weight: bold;
+}
+
+.lblSuccessMessage {
+  color: #008000
+    
+}
+
+.lblErrorMessage {
+  color: #FF0000
+ 
+}
