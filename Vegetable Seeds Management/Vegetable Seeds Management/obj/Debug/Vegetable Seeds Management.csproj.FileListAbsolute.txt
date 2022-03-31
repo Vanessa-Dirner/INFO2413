@@ -116,3 +116,16 @@ C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Se
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\obj\Debug\Vegetable Seeds Management.csproj.CopyComplete
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\obj\Debug\Vegetable Seeds Management.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\obj\Debug\Vegetable Seeds Management.pdb
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Helpers.dll
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Mvc.dll
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Razor.dll
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.dll
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.Razor.dll
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Helpers.xml
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Mvc.xml
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Razor.xml
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.xml
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.Razor.xml

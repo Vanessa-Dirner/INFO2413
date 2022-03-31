@@ -1,25 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Net.Mail;
-using System.Net;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 
+
+
 namespace Vegetable_Seeds_Management
 {
-    public partial class Notifications : System.Web.UI.Page
+
+public partial class Notifications : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             // if (Session["Userid"] == null) Response.Redirect("Login Page.aspx");
         }
 
-        protected void WastedSeedsReport_Click(object sender, EventArgs e)
+
+
+    protected void WastedSeedsReport_Click(object sender, EventArgs e)
         {
 
             using (SqlConnection sqlCon = new SqlConnection(@"Data Source=desktop-ub0lhnh;Initial Catalog=project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
@@ -102,7 +100,7 @@ namespace Vegetable_Seeds_Management
                 DataTable dt = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
                 sda.Fill(dt);
-                
+
 
                 // notify
                 if (!string.IsNullOrEmpty(WastedSeeds))
@@ -117,7 +115,8 @@ namespace Vegetable_Seeds_Management
 
             }
 
-            void MoveExpiredSeeds() {
+            void MoveExpiredSeeds()
+            {
 
                 using (SqlConnection sqlCon = new SqlConnection(@"Data Source=desktop-ub0lhnh;Initial Catalog=project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
                 {
@@ -132,7 +131,7 @@ namespace Vegetable_Seeds_Management
                     DataTable dt = new DataTable();
                     SqlDataAdapter sda = new SqlDataAdapter(sqlcomm);
                     sda.Fill(dt);
-                    
+
 
                     if (string.IsNullOrEmpty(expiredSeeds))
                     {
@@ -150,27 +149,35 @@ namespace Vegetable_Seeds_Management
                     // email notification to administrator
                 }
 
-            void ExpiringSeeds() {
+                void ExpiringSeeds()
+                {
 
-                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=desktop-ub0lhnh;Initial Catalog=project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")) {
-
-                    // Get seeds expiring in 1 year or less
-                    sqlCon.Open();
-                    string expiringSeeds = "SELECT * FROM inventory WHERE expirationdate >= dateadd(year, +1, getdate())";
-                    // notify
-                    if (string.IsNullOrEmpty(expiringSeeds))
+                    using (SqlConnection sqlCon = new SqlConnection(@"Data Source=desktop-ub0lhnh;Initial Catalog=project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
                     {
-                        Console.WriteLine("The following seeds are expiring within 1 year: ");
-                        Console.WriteLine("expiringSeeds");
-                    }
 
-                             }
+                        // Get seeds expiring in 1 year or less
+                        sqlCon.Open();
+                        string expiringSeeds = "SELECT * FROM inventory WHERE expirationdate >= dateadd(year, +1, getdate())";
+                        // notify
+                        if (string.IsNullOrEmpty(expiringSeeds))
+                        {
+                            Console.WriteLine("The following seeds are expiring within 1 year: ");
+                            Console.WriteLine("expiringSeeds");
+                        }
+
+                    }
                 }
-            }
+
+                MoveExpiredSeeds();
+                ExpiringSeeds();
+
+  
+
+
         }
     }
-}
 
+}
 
 
 
