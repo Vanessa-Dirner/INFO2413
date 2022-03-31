@@ -8,7 +8,7 @@ using System.Configuration;
 namespace Vegetable_Seeds_Management
 {
 
-public partial class Notifications : System.Web.UI.Page
+    public partial class Notifications : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,7 +17,7 @@ public partial class Notifications : System.Web.UI.Page
 
 
 
-    protected void WastedSeedsReport_Click(object sender, EventArgs e)
+        protected void WastedSeedsReport_Click(object sender, EventArgs e)
         {
 
             using (SqlConnection sqlCon = new SqlConnection(@"Data Source=desktop-ub0lhnh;Initial Catalog=project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
@@ -171,12 +171,13 @@ public partial class Notifications : System.Web.UI.Page
                 MoveExpiredSeeds();
                 ExpiringSeeds();
 
-  
 
 
+
+            }
         }
-    }
 
+    }
 }
 
 
