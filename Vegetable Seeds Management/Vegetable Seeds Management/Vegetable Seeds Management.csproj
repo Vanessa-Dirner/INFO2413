@@ -135,6 +135,7 @@
     <Content Include="Welcome.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutomaticEmails.cs" />
     <Compile Include="Login Page.aspx.cs">
       <DependentUpon>Login Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -159,7 +160,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Emails.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
