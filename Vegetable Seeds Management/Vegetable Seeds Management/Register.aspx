@@ -2,7 +2,11 @@
 
 <!DOCTYPE html>
 
-<style>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+    <style>
     body {
   font-family: 'Times new Roman', serif;
   padding: 0;
@@ -41,10 +45,7 @@
 }
 
 </style>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+    
     <link href="Register.css" rel="stylesheet" />
 </head>
 <body>
