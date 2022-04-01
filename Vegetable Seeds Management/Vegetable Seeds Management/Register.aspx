@@ -2,6 +2,46 @@
 
 <!DOCTYPE html>
 
+<style>
+    body {
+  font-family: 'Times new Roman', serif;
+  padding: 0;
+  margin: 0;
+}
+
+.txtFirstName, .txtLastName {
+  margin-bottom: 24px;
+  width: 100%
+}
+
+.ddlJobRole {
+  margin-bottom 24px;
+  width: 100%
+}
+
+.txtEmail, .txtUsername, .txtPassword, .txtConfirmPassword {
+  margin-bottom 35px;
+  width: 100%
+}
+
+.btnSubmit {
+  margin-bottom 24px;
+  width: 100%
+  font-weight: bold;
+}
+
+.lblSuccessMessage {
+  color: #008000
+    
+}
+
+.lblErrorMessage {
+  color: #FF0000
+ 
+}
+
+</style>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
