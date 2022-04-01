@@ -12,9 +12,9 @@ CREATE TABLE inventory (
  insert into inventory (batch, expirationdate, quantity, seedtype, seedname, plantingtime)
   values ('B0011', '2023-01-14'  ,'05000'  , 'Sunflower', 'Titan', 'Spring' ),
          ('B0012', '2022-07-22'  ,'10000'  , 'Tomato', 'Power Pops', 'Spring'),
-         ('B0013', '2024-01-10'  ,'05000'  , 'Apple', 'Captain Kidd', 'Spring'),
-         ('B0014', '2023-12-23'  ,'05000'  , 'Grape', 'Moon Drops', 'Spring'),
-         ('B0015', '2022-04-20'  ,'05000'  , 'Blueberry', 'Top Hat', 'Winter');
+         ('B0013', '2024-01-10'  ,'05000'  , 'Carrot', 'Captain Kidd', 'Spring'),
+         ('B0014', '2023-12-23'  ,'05000'  , 'Lettuce', 'Moon Drops', 'Spring'),
+         ('B0015', '2022-04-20'  ,'05000'  , 'Pepper', 'Top Hat', 'Winter');
 
 CREATE TABLE waste (
     wasteid CHAR(5) NOT NULL, 
@@ -27,11 +27,11 @@ CREATE TABLE waste (
     );
  
   insert into waste (wasteid, batch, expirationdate, quantity, seedtype, seedname)
-  values ('w001', 'B0001', '2020-01-10'  ,'00125'  , 'Pear', 'Bosc' ),
-         ('w002','B0002', '2019-07-22'  ,'00608'  , 'Rhubarb', 'KangaRhu'),
-         ('w003','B0003', '2021-01-10'  ,'00005'  , 'Celery', 'Conquistador'),
-         ('w004','B0004', '2022-01-01'  ,'00473'  , 'Lemon', 'Eureka'),
-         ('w005', 'B0005', '2018-09-09'  ,'00201'  , 'Lemon', 'Baboon');
+  values ('w001', 'B0001', '2020-01-10'  ,'00125'  , 'Onion', 'Bosc' ),
+         ('w002','B0002', '2019-07-22'  ,'00608'  , 'Radish', 'KangaRhu'),
+         ('w003','B0003', '2021-01-10'  ,'00005'  , 'Squash', 'Conquistador'),
+         ('w004','B0004', '2022-01-01'  ,'00473'  , 'Corn', 'Eureka'),
+         ('w005', 'B0005', '2018-09-09'  ,'00201'  , 'Broccoli', 'Baboon');
 
 
 CREATE TABLE vendor (
@@ -47,9 +47,9 @@ CREATE TABLE vendor (
   insert into vendor (batch, expirationdate, vendorname, seedtype, seedname, quantityavailable)
   values ('B0021', '2020-01-10', 'West Coast Seeds' , 'Pear', 'Bosc', '50000' ),
          ('B0054', '2019-07-22', 'Canada Seed Company' , 'Sunflower', 'Titan', '73900'),
-         ('B0572', '2021-01-10', 'Farm Direct Seeds' , 'Celery', 'Conquistador', '21204'),
-         ('B0300', '2022-01-01' ,'Tropico' , 'Lemon', 'Eureka', '58208'),
-         ('B0401', '2018-09-09', 'Tropico'  , 'Grape', 'Moon Drops', '10549');
+         ('B0572', '2021-01-10', 'Farm Direct Seeds' , 'Squash', 'Conquistador', '21204'),
+         ('B0300', '2022-01-01' ,'Tropico' , 'Corn', 'Eureka', '58208'),
+         ('B0401', '2018-09-09', 'Tropico'  , 'Lettuce', 'Moon Drops', '10549');
 
 
 
