@@ -89,7 +89,6 @@ C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Se
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\System.IO.Compression.ZipFile.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\System.Net.Http.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -109,35 +108,18 @@ C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Se
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\vbc.rsp
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\VBCSCompiler.exe
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\obj\Debug\Vegetable Seeds Management.csproj.AssemblyReference.cache
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\obj\Debug\Vegetable Seeds Management.csproj.CoreCompileInputs.cache
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\obj\Debug\Vegetable Seeds Management.csproj.CopyComplete
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\obj\Debug\Vegetable Seeds Management.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\obj\Debug\Vegetable Seeds Management.pdb
-C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Helpers.dll
-C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Mvc.dll
-C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Razor.dll
-C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.dll
-C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.Razor.dll
 C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Helpers.xml
 C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Mvc.xml
 C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.Razor.xml
 C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.xml
 C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Vanessa\Desktop\GitHub\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Web.WebPages.Razor.xml
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\BouncyCastle.Crypto.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\MailKit.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\MimeKit.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Buffers.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Memory.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Numerics.Vectors.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Text.Encoding.CodePages.dll
-C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\System.Threading.Tasks.Extensions.dll
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\BouncyCastle.Crypto.xml
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\MailKit.pdb
 C:\Users\Vanessa\Desktop\github\INFO2413\Vegetable Seeds Management\Vegetable Seeds Management\bin\MailKit.xml

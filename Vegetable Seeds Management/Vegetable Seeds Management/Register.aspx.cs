@@ -1,4 +1,4 @@
-+﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +11,7 @@ namespace Vegetable_Seeds_Management
 {
     public partial class Register : System.Web.UI.Page
     {
-        SqlConnection SQLConn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;Initial Catalog=Online vegetable seeds management;Integrated Security=True");
+        SqlConnection SQLConn = new SqlConnection(@"Data Source=desktop-ub0lhnh;Initial Catalog=project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -29,7 +29,7 @@ namespace Vegetable_Seeds_Management
             else
             {
 
-                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog = Online vegetable seeds management;Integrated Security=True;"))
+                using (SqlConnection sqlCon = new SqlConnection(@"Data Source=desktop-ub0lhnh;Initial Catalog=project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
                 {
                     sqlCon.Open();
                     SqlCommand sqlCommand = new SqlCommand("StaffAddorEdit", sqlCon);
